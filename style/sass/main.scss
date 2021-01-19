@@ -1,0 +1,147 @@
+$bg-main-img: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500'%3E%3Ctext textLength='384.8' font-size='414.8' x='115.2' y='318.5' fill='rgb(255, 215, 0)'%3E φ %3C/text%3E%3C/svg%3E");
+
+$sides: (start:left,
+    end:right,
+    top:top,
+    bottom:bottom);
+
+$colors: ('gold':rgb(255, 215, 0),
+    'yellow':rgb(255, 255, 0),
+    'black':rgb(0, 0, 0),
+    'red':rgb(255, 0, 0));
+
+$cursors:('pointer');
+
+.transition- {
+    &1 {
+        transform: scale(0) rotate(1turn);
+        transition: transform 2000ms ease-out, opacity 2000ms ease-out;
+        opacity: 0;
+
+        &.popup--open {
+            transform: scale(1) rotate(0deg);
+            opacity: 1;
+        }
+    }
+
+    &2 {
+        transform: scale(5) rotate(-2turn);
+        transition: transform 1000ms ease-out, opacity 1000ms ease-out;
+        opacity: 0;
+
+        &.popup--open {
+            transform: scale(1) rotate(0deg);
+            opacity: 1;
+        }
+    }
+}
+
+
+.spinner {
+    &-grow {
+        &-xl {
+            $spinner-size: 10rem;
+            width: $spinner-size;
+            height: $spinner-size;
+        }
+    }
+}
+
+.bg-main {
+    background: $bg-main-img no-repeat fixed center;
+}
+
+// colored text
+@each $key,
+$value in $colors {
+    .text-#{$key} {
+        color: $value;
+    }
+}
+
+// colored background
+@each $key,
+$value in $colors {
+    .bg-#{$key} {
+        background-color: $value;
+    }
+}
+
+// colored border
+@each $key,
+$value in $colors {
+    .border-#{$key} {
+        border-color: $value !important;
+    }
+}
+
+// placing
+@each $key,
+$value in $sides {
+    .#{$key} {
+        @for $i from 1 to 100 {
+            &-#{$i} {
+                #{$value}: round(percentage($i/100));
+            }
+        }
+    }
+}
+
+//sizing
+.w-c {
+    width: fit-content;
+}
+
+.h-c {
+    height: fit-content;
+}
+
+.h- {
+    @for $i from 0 through 100 {
+        &#{$i} {
+            height: round(percentage($i/100));
+        }
+    }
+}
+
+.w- {
+    @for $i from 0 through 100 {
+        &#{$i} {
+            width: round(percentage($i/100));
+        }
+    }
+}
+
+.vh- {
+    @for $i from 1 through 100 {
+        &#{$i} {
+            height: #{$i}vh;
+        }
+    }
+}
+
+.vw- {
+    @for $i from 1 through 100 {
+        &#{$i} {
+            width: #{$i}vw;
+        }
+    }
+}
+
+// screen too small
+
+.d-hsm-none {
+    display: none;
+
+    @media screen and (max-height: 530px) {
+        display: flex !important;
+    }
+}
+
+// cursor
+
+@each $var in $cursors {
+    .cursor-#{$var} {
+        cursor: #{$var};
+    }
+}

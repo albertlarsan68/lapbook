@@ -3,16 +3,301 @@
 
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1 height=device-height">
         <title>Lapbook</title>
-        <link rel="stylesheet" href="./style/css/main.css" />
         <link rel="stylesheet" href="./style/css/vendor1.css" />
         <link rel="stylesheet" href="./style/css/vendor2.css" />
+        <link rel="stylesheet" href="./style/css/main.min.css" />
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </head>
 
-    <body>
-        <div class="btn">Hello</div>
-        <script href="./js/main.js"></script>
+    <body class="bg-dark text-white-50 vh-100 p-3 overflow-hidden" onload="javascript:finishedLoading()">
+
+        <div class="h-100 container-fluid bg-main">
+            <!-- Main page -->
+            <!-- Place home page components between here -->
+            <header class="text-center col">
+                <h1 class="text-gold">LE NOMBRE D'OR</h1>
+            </header>
+            <div class="row row-cols-1">
+                <div class="col">
+                    <div class="w-75 d-inline-block" aria-hidden="true"></div>
+                    <div class="btn border border-black rounded-3 text-black btn-popup wc bg-yellow" id="btn-popup-1"
+                        opens-popup="1" role="button">
+                        <p class="m-0">1. Qui suis-je ?</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="btn border border-black rounded-3 text-black btn-popup wc bg-red" id="btn-popup-2"
+                        opens-popup="2">
+                        <p class="m-0">2. D'où je viens ?</p>
+                    </div>
+                </div>
+                <div class="col vh-40" aria-hidden="true"></div>
+                <div class="col">
+                    <div class="btn border border-light rounded-3 text-white-50 btn-popup wc" id="btn-popup-3"
+                        opens-popup="3">
+                        <p class="m-0">3. À quoi je sers ?</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="w-70 d-inline-block" aria-hidden="true"></div>
+                    <div class="btn border border-light rounded-3 text-white-50 btn-popup wc" id="btn-popup-99"
+                        opens-popup="99">
+                        <p class="m-0"> 4. Bibliographie</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- And here -->
+        </div>
+
+        <div>
+            <!-- Place popups <article>s between here -->
+            <article class="popup bg-light rounded-3 position-absolute w-25 p-3 h-c text-dark d-none top-15 end-15"
+                id="popup-1">
+                <button onclick="javascript:closePopup('1')" type="button"
+                    class="btn-close btn-close-white position-absolute top-0 start-100 translate-middle"
+                    aria-label="Close"></button>
+                <div class="">
+                    <p>
+                        Bonjour ! Je m'appelle <code class="text-reset">φ</code> «phi».<br />
+                        On me nomme aussi la divine proportion, la section dorée, la divine proportion ou encore
+                        proportion dorée. Mais mon nom le plus courant est <span class="text-gold">LE NOMBRE
+                            D'OR.</span><br />
+                        Je suis une proportion, égale à \(\frac{1+\sqrt5}{2}\) et considérée comme particulièrement
+                        esthétique.<br />
+                        Euclide dit de moi : la proportion définie par a et b est dite d'« extrême et moyenne raison
+                        » lorsque
+                        \(\frac{a+b}{a}=\frac{a}{b}\). <br />
+                        Le rapport \(\frac{a}{b}\) est alors égal au nombre d'or.<br />
+                        Ma valeur approchée à \(10^{-5}\) est \(1,61803\).<br />
+                        Je suis un nombre irrationnel, on ne peut pas m'écrire sous la forme d'une fraction de deux
+                        entiers.<br />
+                        Je suis sûr que vous m'avez déjà rencontré...
+                    </p>
+                </div>
+            </article>
+
+            <article class="popup bg-light rounded-3 position-absolute top-15 start-15 w-25 p-3 h-c text-dark d-none"
+                id="popup-2">
+                <button onclick="javascript:closePopup('2')" type="button"
+                    class="btn-close btn-close-white position-absolute top-0 start-100 translate-middle"
+                    aria-label="Close">
+                </button>
+                <div class="">
+                    <p>
+                        Je viens de Grèce, c'est <span class="text-red">Euclide</span> qui m'a découvert. C'était un
+                        mathématicien grec des IV et III<sup>ème</sup>siècle avant JC.<br />
+                        Il est considéré comme le <span class="text-red">père de la géométrie</span>.<br />
+                        Il est l'auteur d'un traité sur les mathématiques, « Éléments de mathématiques ».
+                    </p>
+                    <p class="m-0"><img src="https://download.vikidia.org/vikidia/fr/images/9/9b/Euclide.jpg"
+                            alt="Portrait d'Euclide" class="vh-30"><img
+                            src="https://cdn-europe1.lanmedia.fr/var/europe1/storage/images/europe1/sciences/la-pyramide-de-kheops-quelques-certitudes-et-beaucoup-de-mysteres-3482210/45022991-2-fre-FR/La-pyramide-de-Kheops-quelques-certitudes-et-beaucoup-de-mysteres.jpg"
+                            alt="Pyramide de Khéops" class="w-60"></p>
+                    <p>
+                        Cependant, pour nombre de scientifiques, mon origine remonte à la piramide de Khéops (2600 avant
+                        JC).
+                    </p>
+
+
+                </div>
+            </article>
+
+            <article
+                class="popup bg-transparent rounded-3 position-absolute p-3 text-dark d-none top-0 start-0 vw-100 vh-100"
+                id="popup-3" onclick="javascript:closePopup(3)">
+                <div class="container-fluid ms-5">
+                    <div class="row row-cols-1">
+                        <div class="col vh-67"></div>
+                        <div class="col">
+                            <div class="btn border border-light rounded-3 text-white-50 btn-popup wc" id="btn-popup-4"
+                                opens-popup="4">
+                                <p class="m-0">1. En architecture</p>
+                            </div>
+                            <div class="col vh-1"></div>
+                            <div class="col">
+                                <div class="btn border border-light rounded-3 text-white-50 btn-popup wc"
+                                    id="btn-popup-5" opens-popup="5">
+                                    <p class="m-0">2. Dans la nature</p>
+                                </div>
+                            </div>
+                            <div class="col vh-1"></div>
+                            <div class="col">
+                                <div class="btn border border-light rounded-3 text-white-50 btn-popup wc"
+                                    id="btn-popup-5" opens-popup="5">
+                                    <p class="m-0">2. Dans la nature</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </article>
+
+            <article class="popup bg-light rounded-3 position-absolute top-30 start-20 w-60 p-3 h-c d-none text-black"
+                id="popup-4">
+                <button onclick="javascript:closePopup('4')" type="button"
+                    class="btn-close btn-close-white position-absolute top-0 start-100 translate-middle"
+                    aria-label="Close"></button>
+                <p>
+                    Depuis l'antiquité, les architectes m'utilisent pour créer des bâtiments, comme le
+                    <b class="btn-popup cursor-pointer" opens-popup="10">Parthénon</b>.<br />
+                    L'architectes Icnitos a utilisé <b class="btn-popup cursor-pointer" opens-popup="11">«le rectangle
+                        d'or»</b> pour ériger ce monument, entre 447 et 438 avant JC, sur l'Acropole d'Athènes, en
+                    Grèce. Le sculpteur Phidias m'a utilisé pour décorer ce temple. C'est en l'honneur de Phidias que
+                    mon petit nom est <code class="text-reset">φ</code>.
+                </p>
+                <p>
+                    Au Moyen-Âge, les bâtisseurs de cathédrales se passent les règles du nombre d'or par voie orale,
+                    d'initié à initié. Bien plus tard, au début du 16èS, le moine Lucas Pacioli di borgo l'étudie dans
+                    son livre "De divina proportione", prouvant l'existance de Dieu. C'est la fameuse "divine
+                    proportion". C'est la cas par exemple le cas de la <b class="btn-popup cursor-pointer"
+                        opens-popup="12">cathédrale de Dol-de-Bretagne</b>.
+                </p>
+                <p>
+                    <b class="btn-popup cursor-pointer" opens-popup="13">Le Corbusier</b> m'a utilisé pour créer son
+                    <b class="btn-popup cursor-pointer" opens-popup="14">«Modulor»</b>, une figure géométrique
+                    destinée à aider les architectes à créer des bâtiments à taille humaine.
+                </p>
+            </article>
+
+            <article class="popup bg-light rounded-3 position-absolute top-30 start-20 w-60 p-3 h-c d-none text-black"
+                id="popup-5">
+                <button onclick="javascript:closePopup('5')" type="button"
+                    class="btn-close btn-close-white position-absolute top-0 start-100 translate-middle"
+                    aria-label="Close"></button>
+                <p>On me retrouve dans la nature :
+                <ul>
+                    <li>Les <b class="btn-popup cursor-pointer" opens-popup="15">aloès spirale</b></li>
+                    <li>Les <b class="btn-popup cursor-pointer" opens-popup="16">coquilles d'escargots</b></li>
+                    <li>Les <b class="btn-popup cursor-pointer" opens-popup="17">fleurs de tournesol</b></li>
+                </ul>
+                </p>
+            </article>
+
+            <none>
+                <article
+                    class="popup bg-light rounded-3 position-absolute top-30 start-20 w-c p-3 h-c d-none text-black"
+                    id="popup-10">
+                    <button onclick="javascript:closePopup('10')" type="button"
+                        class="btn-close btn-close-black position-absolute top-0 start-100 translate-middle"
+                        aria-label="Close"></button>
+                    <img src="https://www.gaiamamart.com/wp-content/uploads/2019/10/parthenon-nombre-or.jpg"
+                        alt="Parthénon">
+                </article>
+
+                <article
+                    class="popup bg-light rounded-3 position-absolute top-20 start-20 w-50 p-3 h-c d-none text-black"
+                    id="popup-11">
+                    <button onclick="javascript:closePopup('11')" type="button"
+                        class="btn-close btn-close-black position-absolute top-0 start-100 translate-middle"
+                        aria-label="Close"></button>
+                    <p>On appelle «rectangle d'or» un rectangle tel que \(\frac{L}{l}=φ\). Tout rectangle d'or peut se
+                        décomposer en un carré et un rectangle d'or, qui lui aussi peut se décomposer en un carré et un
+                        rectangle d'or. Dnas ce tourbillon de carrés, il est possible d'inscrire une spirale.</p>
+                    <img src="./img/png/rectangle d'or.png" alt="Rectangle d'or">
+                </article>
+
+                <article
+                    class="popup bg-light rounded-3 position-absolute top-20 start-20 w-50 p-3 h-c d-none text-black"
+                    id="popup-12">
+                    <button onclick="javascript:closePopup('12')" type="button"
+                        class="btn-close btn-close-black position-absolute top-0 start-100 translate-middle"
+                        aria-label="Close"></button>
+                    <img src="https://www.cathedrales-gothiques.com/abo/cathedrales-gothiques/images/doldebretagne1.jpg"
+                        alt="Cathédrale gothique" class="w-100">
+                </article>
+
+                <article
+                    class="popup bg-light rounded-3 position-absolute top-20 start-20 w-50 p-3 h-c d-none text-black"
+                    id="popup-13">
+                    <button onclick="javascript:closePopup('13')" type="button"
+                        class="btn-close btn-close-black position-absolute top-0 start-100 translate-middle"
+                        aria-label="Close"></button>
+                    <p class="">Le Corbusier, de son vrai nom Charles-Édouard Jeanneret-Gris, était un un architecte et
+                        un
+                        urbaniste renommé.</p>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Le_Corbusier_%281964%29.jpg"
+                        alt="Le Corbusier" class="vh-30">
+                </article>
+
+                <article
+                    class="popup bg-light rounded-3 position-absolute top-20 start-20 w-50 p-3 h-c d-none text-black"
+                    id="popup-14">
+                    <button onclick="javascript:closePopup('14')" type="button"
+                        class="btn-close btn-close-black position-absolute top-0 start-100 translate-middle"
+                        aria-label="Close"></button>
+                    <img src="https://www.lescouleurs.ch/fileadmin/media/journal/Bibliothek/Modulor/Slider1-Modulor-LeCorbusier-_c_FLC-ADAGP.jpg"
+                        alt="Modulor, Le Corbusier" class="w-100">
+                </article>
+
+                <article
+                    class="popup bg-light rounded-3 position-absolute top-20 start-20 w-50 p-3 h-c d-none text-black"
+                    id="popup-15">
+                    <button onclick="javascript:closePopup('15')" type="button"
+                        class="btn-close btn-close-black position-absolute top-0 start-100 translate-middle"
+                        aria-label="Close"></button>
+                    <img src="https://sain-et-naturel.ouest-france.fr/wp-content/uploads/2019/11/8ab9ca7ac52883c71eeb05a58dde6ffd.jpg"
+                        alt="Aloès spirale" class="w-100">
+                </article>
+
+                <article
+                    class="popup bg-light rounded-3 position-absolute top-20 start-20 w-50 p-3 h-c d-none text-black"
+                    id="popup-16">
+                    <button onclick="javascript:closePopup('16')" type="button"
+                        class="btn-close btn-close-black position-absolute top-0 start-100 translate-middle"
+                        aria-label="Close"></button>
+                    <img src="https://sain-et-naturel.ouest-france.fr/wp-content/uploads/2019/11/592cb4eeae4e18f7b4baf476a9031045.jpg"
+                        alt="Escargot sur une feuille" class="w-100">
+                </article>
+            </none>
+
+            <article class="popup bg-light rounded-3 position-absolute top-20 start-20 w-c p-3 h-c d-none text-black"
+                id="popup-17">
+                <button onclick="javascript:closePopup('17')" type="button"
+                    class="btn-close btn-close-black position-absolute top-0 start-100 translate-middle"
+                    aria-label="Close"></button>
+                <img src="https://sain-et-naturel.ouest-france.fr/wp-content/uploads/2019/11/791834a41cc6c86c0995b16f7bc6eacf.jpg"
+                    alt="Tournesol" class="vh-50">
+            </article>
+
+
+            <article class="popup bg-secondary rounded-3 position-absolute top-50 start-50 w-10 p-3 h-c d-none"
+                id="popup-99">
+                <button onclick="javascript:closePopup('99')" type="button"
+                    class="btn-close btn-close-white position-absolute top-0 start-100 translate-middle"
+                    aria-label="Close"></button>
+                <div>
+                    <h2>Bibliographie</h2>
+                </div>
+            </article>
+            <!-- And here -->
+        </div>
+
+        <div class="bg-dark position-absolute top-0 start-0 w-100 p-0 h-100 d-flex justify-content-center align-items-end"
+            id="loader">
+            <div class="text-center w-75 h-75">
+                <span class="spinner-grow spinner-grow-xl" role="status" aria-hidden="true"></span><br />
+                Chargement...
+            </div>
+        </div>
+
+        <div
+            class="bg-dark position-absolute top-0 start-0 w-100 p-0 h-100 d-flex justify-content-center align-items-end d-md-none d-hsm-none">
+            <div class="text-center w-75 h-75">
+                <p>
+                    Malheureusement, votre écran est trop petit pour être capable d'afficher de façon optimale cette
+                    page.<br />
+                    Veuillez dézoomer ou passer en mode 'ordinateur', si vous êtes sur mobile.
+            </div>
+        </div>
+        <script src="./js/main.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+            crossorigin="anonymous"></script>
     </body>
 
 </html>
