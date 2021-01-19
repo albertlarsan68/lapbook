@@ -7,7 +7,6 @@
 let popupsQuantity;
 let popupsButtons = [];
 //=== Modify var values below
-popupsQuantity = 12;
 //=== Don't modify anything below
 
 let buttons = document.getElementsByClassName('btn-popup');
@@ -45,8 +44,6 @@ function finishedLoading2() {
     const spinner = document.getElementById("loader");
     spinner.classList.add("d-none");
     console.log("[Loader] Loading finished");
-    openPopup(3);
-
 }
 
 /**
